@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for article in object_list %}
+        <article>
+            <h2>{{article.title}}</h2>
+            <div>{{article.author}}</div>
+            <div>{{article.publish}}</div>
+            <p>{{article.content}}</p>
+            <hr>
+        </article>
+    {% empty %}
+        <h2>No Content</h2>
+    {% endfor %}
+</body>
+</html>
