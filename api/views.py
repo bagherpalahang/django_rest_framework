@@ -1,5 +1,6 @@
 # from django.shortcuts import render
 from django.contrib.auth.models import User
+from rest_framework.permissions import IsAdminUser
 from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveAPIView, RetrieveUpdateDestroyAPIView
 
 from blog.models import Article
@@ -17,9 +18,13 @@ class ArticleDetail(RetrieveUpdateDestroyAPIView):
     lookup_field = 'slug'
 
 class UserList(ListCreateAPIView):
+    permission_classes = [IsAdminUser]
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 class UserDetail(RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAdminUser]
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
