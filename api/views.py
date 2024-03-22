@@ -12,7 +12,7 @@ from .permissions import IsSuperUser, IsAuthorOrReadOnly, IsStaffOrReadOnly, IsS
 class ArticleList(ListCreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
-
+    
 
 class ArticleDetail(RetrieveUpdateDestroyAPIView):
     parser_classes = [IsStaffOrReadOnly, IsAuthorOrReadOnly]
