@@ -43,15 +43,13 @@ INSTALLED_APPS = [
     'api',
 
     # 3rd app party
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'dj_rest_auth.registration',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'dj_rest_auth',
+    # 'dj_rest_auth.registration',
     'rest_framework',
-    'rest_framework.authtoken',
-    'dj_rest_auth',
-
-
+    # 'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -145,7 +143,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         # 'rest_framework.authentication.BasicAuthentication',
         # 'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication'
     ]
 
 }

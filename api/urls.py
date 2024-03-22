@@ -9,8 +9,8 @@ urlpatterns = [
     path("user/", UserList.as_view(), name='user_list'),
     # path("revoke-token/", RevokeToken.as_view(), name='revoke token'),
     # path('token-auth/', obtain_auth_token),
-    path('rest-auth/registration/', include('dj_rest_auth.registration.urls')),
-    path('rest-auth/', include('dj_rest_auth.urls')),
+    # path('rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+    # path('rest-auth/', include('dj_rest_auth.urls')),
 
     path("<slug:slug>/", ArticleDetail.as_view(), name='article_detail'),   
     path("user/<int:pk>/", UserDetail.as_view(), name='article_detail'),
